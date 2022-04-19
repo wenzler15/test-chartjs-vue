@@ -5,27 +5,27 @@ export default {
   extends: Line,
   props: {
     label: {
-      type: String
+      type: String,
     },
     chartData: {
-      type: Array
+      type: Array,
     },
     options: {
-      type: Object
+      type: Object,
     },
     chartColors: {
-      type: Object
-    }
+      type: Object,
+    },
   },
   mounted() {
-    const dates = this.chartData.map(d => d.date).reverse();
-    const totals = this.chartData.map(d => d.total).reverse();
+    const dates = this.chartData.map((d) => d.date).reverse();
+    const totals = this.chartData.map((d) => d.total).reverse();
 
     const {
       borderColor,
       pointBorderColor,
       pointBackgroundColor,
-      backgroundColor
+      backgroundColor,
     } = this.chartColors;
 
     this.renderChart(
@@ -38,12 +38,12 @@ export default {
             borderColor: borderColor,
             pointBorderColor: pointBorderColor,
             pointBackgroundColor: pointBackgroundColor,
-            backgroundColor: backgroundColor
-          }
-        ]
+            backgroundColor: backgroundColor,
+          },
+        ],
       },
       this.options
     );
-  }
+  },
 };
 </script>
